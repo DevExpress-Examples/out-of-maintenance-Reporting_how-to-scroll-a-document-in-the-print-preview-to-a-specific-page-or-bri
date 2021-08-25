@@ -8,8 +8,15 @@
 # How to scroll a document in the print preview to a specific page or brick
 
 
-<p>Basically, this example demonstrates how to scroll a document in the print preview to a specific page. To accomplish this task it's enough to set the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPrintingControlPrintControl_SelectedPageIndextopic">PrintControl.SelectedPageIndex Property </a> value to the desired page index. Note that you can even scroll to a specific brick within a document page. For this, use the <a href="http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPrintingControlPrintControl_ShowBricktopic">PrintControl.ShowBrick Method </a> and, optionally, <a href="http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraPrintingPrintingSystemBase_MarkBricktopic">PrintingSystemBase.MarkBrick Method </a>.</p>
+This example demonstrates the following ways:
 
-<br/>
+* **How to scroll a document in the print preview to a specific page.**
+
+To accomplish this task, it's enough to set the [PrintControl.SelectedPageIndex Property](http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPrintingControlPrintControl_SelectedPageIndextopic) property value to the required page index.
+
+* **How to scroll to a specific brick and mark it.**
+
+First, you need to use our [BrickSelector](https://docs.devexpress.com/CoreLibraries/DevExpress.XtraPrinting.BrickSelector) to get the required [Brick](https://docs.devexpress.com/WindowsForms/88/controls-and-libraries/printing-exporting/concepts/basic-terms/bricks).
+Then, you can use the [PrintControl.ShowBrick](http://documentation.devexpress.com/#WindowsForms/DevExpressXtraPrintingControlPrintControl_ShowBricktopic) method and, optionally, the [PrintingSystemBase.MarkBrick](http://documentation.devexpress.com/#CoreLibraries/DevExpressXtraPrintingPrintingSystemBase_MarkBricktopic) method.
 
 

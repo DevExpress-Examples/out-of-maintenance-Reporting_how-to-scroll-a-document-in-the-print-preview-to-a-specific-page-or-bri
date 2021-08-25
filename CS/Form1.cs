@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DevExpress.XtraPrinting;
+using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PrintGoToPage
@@ -34,17 +36,13 @@ namespace PrintGoToPage
         }
 
         private void button3_Click(object sender, EventArgs e) {
-            DevExpress.XtraPrinting.Page page = printingSystem1.Document.Pages[3];
-            DevExpress.XtraPrinting.BrickEnumerator brickEnumerator = page.GetEnumerator();
-            DevExpress.XtraPrinting.Brick brick = null;
+            Page page = printingSystem1.Document.Pages[3];
+            var brick = BrickSelector.GetBricks(page).Skip(4).FirstOrDefault();
 
-            for(int i = 0; i < 5; i++) {
-                brickEnumerator.MoveNext();
-                brick = brickEnumerator.CurrentBrick;
+            if(brick != null) {
+                printingSystem1.PreviewFormEx.PrintControl.ShowBrick(brick, page);
+                printingSystem1.MarkBrick(brick, page);
             }
-
-            printingSystem1.PreviewFormEx.PrintControl.ShowBrick(brick, page);
-            printingSystem1.MarkBrick(brick, page);
         }
 
     }
