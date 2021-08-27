@@ -1,6 +1,5 @@
 ﻿Imports DevExpress.XtraPrinting
 Imports System
-Imports System.Linq
 Imports System.Windows.Forms
 
 Namespace PrintGoToPage
@@ -42,7 +41,8 @@ Namespace PrintGoToPage
 			If Not Me.button3.IsHandleCreated Then Return
 
 			Dim page As Page = printingSystem1.Document.Pages(3)
-			Dim brick = BrickSelector.GetBricks(page).Skip(4).FirstOrDefault()
+			Dim bricks = BrickSelector.GetBricks(page)
+			Dim brick = bricks(4)
 
 			If brick IsNot Nothing Then
 				printingSystem1.PreviewFormEx.PrintControl.ShowBrick(brick, page)
